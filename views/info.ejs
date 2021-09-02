@@ -1,0 +1,129 @@
+<%- include("./partials/header")%>
+<!--Main Page-->
+<style>
+  body{
+    background-color: black;
+  }
+  p{
+    font-family: 'Benne', serif;
+  }
+  h4,h5,li{
+    font-family: 'Dela Gothic One', cursive;
+  
+  }
+  .plot{
+   border-style: solid;
+   border-color: red green blue yellow;
+   border-color: black black black black;
+  }
+  img{
+  border-top-style: dashed;
+  border-bottom-style: dashed;
+  border-left-style: dashed;
+  border-right-style: dashed;
+  }
+  
+</style>
+  
+<body >
+  <!--
+      <div class="container">
+    
+
+  <div class="card flex-row flex-wrap">
+    <div class="card-header border-0">
+      <%if(movie.Poster==='N/A'){%>
+        <img src="https://bitsofco.de/content/images/2018/12/broken-1.png" class="card-img-top" >
+     <% }%>
+      <img src="<%=movie.Poster%>" alt="Poster"/><button type="button" class="btn btn-success" >Box Office: <%=movie.BoxOffice%> </button>
+    </div>
+
+    <div class="card-block px-2">
+        <h4 class="card-title"><%=movie.Title%></h4>
+        <p class="card-text"><%=movie.Genre%></p>
+        <p class="card-text">Runtime:-<%=movie.Runtime%></p>
+        <p class="card-text">Release Date:-<%=movie.Released%></p>
+        <p class="plot"><%=movie.Plot%></p>
+        <p class="card-text">Actors: <%=movie.Actors%></p>
+        <p class="card-text">Country: <%=movie.Country%></p>
+        <p class="card-text">Type: <%=movie.Type%></p>
+        <p class="card-text">Production:- <%=movie.Production%></p>
+        <p class="card-text">Website:- <%=movie.Website%></p>
+        <p class="card-text">Director: <%=movie.Director%></p>
+        <p class="card-text">Writer: <%=movie.Writer%></p>
+        <p class="card-text">Language: <%=movie.Language%></p>
+        <p class="plot">Awards: <%=movie.Awards%></p>
+
+    </div> 
+
+    <div class="plot">
+        <ul>
+
+        </br>
+        <h5 class="card-title">Ratings</h5>
+        <%movie['Ratings'].forEach(function(rating){%>
+            <li> <%=rating.Source%> - <%=rating.Value%></li>
+        <%})%>
+        <li>Metascore -<%=movie.Metascore%></li>
+        <li>IMDB -<%=movie.imdbRating%></li>
+        <li>ImdbVotes -<%=movie.imdbVotes%></li>
+      </ul>
+        <div class="w-100"></div>
+      <div class="boxoffice">Box Office: <%=movie.BoxOffice%>
+      </div>  
+      
+      <button type="button" class="btn btn-success">Box Office: <%=movie.BoxOffice%></button>
+</div>
+  -->
+  <div class="container">
+    <div class="card mb-3" style="max-width: 840px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <%if(movie.Poster==='N/A'){%>
+            <img src="https://bitsofco.de/content/images/2018/12/broken-1.png" class="card-img-top" >
+         <% }%>
+          <img src="<%=movie.Poster%>" alt="Poster"/>
+        </div>
+
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%=movie.Title%></h5>
+            <p class="card-text"><%=movie.Genre%></p>
+            <p class="card-text">Runtime:-<%=movie.Runtime%></p>
+            <p class="card-text">Release Date:-<%=movie.Released%></p>
+            <p class="plot"><%=movie.Plot%></p>
+            <p class="card-text">Actors: <%=movie.Actors%></p>
+            <p class="card-text">Country: <%=movie.Country%></p>
+            <p class="card-text">Type: <%=movie.Type%></p>
+            <p class="card-text">Production:- <%=movie.Production%></p>
+            <p class="card-text">Website:- <%=movie.Website%></p>
+            <p class="card-text">Director: <%=movie.Director%></p>
+            <p class="card-text">Writer: <%=movie.Writer%></p>
+            <p class="card-text">Language: <%=movie.Language%></p>
+            <p class="plot">Awards: <%=movie.Awards%></p>
+
+           <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            <div class="plot">
+              <ul>
+      
+              </br>
+              <h5 class="card-title">Ratings</h5>
+              <%movie['Ratings'].forEach(function(rating){%>
+                  <li> <%=rating.Source%> - <%=rating.Value%></li>
+              <%})%>
+              <li>Metascore -<%=movie.Metascore%></li>
+              <li>IMDB -<%=movie.imdbRating%></li>
+              <li>ImdbVotes -<%=movie.imdbVotes%></li>
+            </ul>
+              <div class="w-100"></div>
+            <div class="boxoffice">Box Office: <%=movie.BoxOffice%>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+<%- include("./partials/footer")%>
