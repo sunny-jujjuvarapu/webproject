@@ -1,22 +1,39 @@
 <%- include("./partials/header")%>
+<style>
+  body{
+    background-color: black;
+  }
+  
+</style>
+<body>
     <div class = "container">
       <%if(moviesDump.Response==='False'){%>
-      <h1>movie not found </h1>
+      <h1>Aw! Snap Movie not Found </h1>
     <%}else{%>
-      <h1>result goes here</h1>
     <div class="row">
-      <%moviesDump['Search'].forEach(function(movie){%>
-        
-        <div class="card" style="width: 18rem;">
-          <img src="<%=movie.Poster%>" class="card-img-top" alt="...">
+      <%moviesDump['Search'].forEach(function(movie){%>  <!--for each function in javascript&& search is a array of objects-->
+       <!-- <div class="card" style="width: 18rem;">  -->
+        <div
+        class="card px-2 py-2"
+        style="
+          width: 20rem;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+        ">
+        <%if(movie.Poster==='N/A'){%>
+          <img src="https://bitsofco.de/content/images/2018/12/broken-1.png" class="card-img-top" >
+        <%}%>
+          <img src="<%=movie.Poster%>" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title"><%=movie.Title%></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="/result<%=movie.imdbID%>" class="btn btn-primary">know more about this movie</a>
+            <p class="card-text">Release Date:-<%=movie.Year%>.</p>
+            <a href="/result/<%=movie.imdbID%>/info" class="btn btn-primary">Click for more info</a>
           </div>
         </div>
-      <%})%>
+      <%})%> 
     <%}%>
     </div>    
     </div>
+  </body>
 <%- include("./partials/footer")%>   
